@@ -1,9 +1,9 @@
 import Transport.Bus;
 import Transport.FreightCar;
 import Transport.PassengerCar;
-import drivers.Driver_B;
-import drivers.Driver_C;
-import drivers.Driver_D;
+import drivers.DriverB;
+import drivers.DriverC;
+import drivers.DriverD;
 
 
 
@@ -28,9 +28,9 @@ public class Main {
 
         bus1.bestLapTime();
 
-        Driver_B ipatov = new Driver_B("Ипатов", "Матвей", "Олегович", 'B', 12, pas1);
-        Driver_C rogozin = new Driver_C("Рогозин", "Андрей", "Максимович", 'C', 11, fr1);
-        Driver_D devetiarov = new Driver_D("Деветьяров", "Максим", "Викторович", 'D', 6, bus2);
+        DriverB ipatov = new DriverB("Ипатов", "Матвей", "Олегович", 'B', 12, pas1);
+        DriverC rogozin = new DriverC("Рогозин", "Андрей", "Максимович", 'C', 11, fr1);
+        DriverD devetiarov = new DriverD("Деветьяров", "Максим", "Викторович", 'D', 6, bus2);
 
         ipatov.info();
         rogozin.info();

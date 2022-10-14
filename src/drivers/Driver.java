@@ -3,12 +3,12 @@ package drivers;
 import Transport.*;
 
 
-public abstract class Driver<R extends Car & Competing>{
+public abstract class Driver<T extends Car & Competing>{
     private String surname;
     private String name;
     private String patronymic;
 
-    private R raceTransport;
+    private T raceTransport;
     private char driverLicense;
     private double experience;
 
@@ -25,7 +25,7 @@ public abstract class Driver<R extends Car & Competing>{
     }
 
 
-    public Driver(String surname, String name, String patronymic, char driverLicense, double experience, R raceTransport) {
+    public Driver(String surname, String name, String patronymic, char driverLicense, double experience, T raceTransport) {
         if (surname == null || surname.isBlank() || surname.isEmpty()) {
             this.surname = "<<default>>";
         } else {
@@ -68,8 +68,8 @@ public abstract class Driver<R extends Car & Competing>{
     public void setName(String name) {this.name = name;}
     public String getPatronymic() {return patronymic;}
     public void setPatronymic(String patronymic) {this.patronymic = patronymic;}
-    public R getRaceTransport() {return raceTransport;}
-    public void setRaceTransport(R raceTransport) {this.raceTransport = raceTransport;}
+    public T getRaceTransport() {return raceTransport;}
+    public void setRaceTransport(T raceTransport) {this.raceTransport = raceTransport;}
     public char getDriverLicense() {return driverLicense;}
     public void setDriverLicense(char driverLicense) {this.driverLicense = driverLicense;}
     public double getExperience() {return experience;}
