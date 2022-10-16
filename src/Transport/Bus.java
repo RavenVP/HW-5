@@ -1,8 +1,11 @@
 package Transport;
 
 public class Bus extends Car implements Competing{
-    public Bus(String brand, String model, double engineValue) {
+
+    private SeatsCapacityType seatsCapacityType;
+    public Bus(String brand, String model, double engineValue, SeatsCapacityType seatsCapacityType) {
         super(brand, model, engineValue);
+        this.seatsCapacityType = seatsCapacityType;
     }
 
 
@@ -11,11 +14,19 @@ public class Bus extends Car implements Competing{
         System.out.println("Закончил движение");
     }
 
+    @Override
+    public void identifyType() {
+        if (seatsCapacityType == null ) {
+            System.out.println("Данным по авто недостаточно");
+        } else {
+            System.out.println("Количество мест в авто -> " + seatsCapacityType.getSeatsCapacityType());
+        }
+    }
+
 
     public void pitStop() {
         System.out.println("Этот автобус ушёл на питстоп");
     }
-
     public void bestLapTime() {
         System.out.println("Лучшее время круга этого автобуса - ");
     }
@@ -23,4 +34,8 @@ public class Bus extends Car implements Competing{
     public void maxSpeed() {
         System.out.println("Наибольшая скорость этого автобуса - ");
     }
+
+    public SeatsCapacityType getSeatsCapacityType() {return seatsCapacityType;}
+
+    public void setSeatsCapacityType(SeatsCapacityType seatsCapacityType) {this.seatsCapacityType = seatsCapacityType;}
 }

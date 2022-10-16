@@ -1,6 +1,4 @@
-import Transport.Bus;
-import Transport.FreightCar;
-import Transport.PassengerCar;
+import Transport.*;
 import drivers.DriverB;
 import drivers.DriverC;
 import drivers.DriverD;
@@ -10,21 +8,23 @@ import drivers.DriverD;
 public class Main {
     public static void main(String[] args) {
 
-        PassengerCar pas1 = new PassengerCar("Audi", "Q5", 2.1);
-        PassengerCar pas2 = new PassengerCar("Fiat", "500", 1.3);
-        PassengerCar pas3 = new PassengerCar("Lexus", "RX350", 2.0);
-        PassengerCar pas4 = new PassengerCar("Lada", "Grande", 1.5);
+        PassengerCar pas1 = new PassengerCar("Audi", "Q5", 2.1, BodyType.SEDAN );
+        PassengerCar pas2 = new PassengerCar("Fiat", "500", 1.3, BodyType.COUPE);
+        PassengerCar pas3 = new PassengerCar("Lexus", "RX350", 2.0, BodyType.CROSSOVER);
+        PassengerCar pas4 = new PassengerCar("Lada", "Grande", 1.5, BodyType.SEDAN);
+        pas1.identifyType();
 
-        FreightCar fr1 = new FreightCar("JAC", "Sunray", 2.7);
-        FreightCar fr2 = new FreightCar("Валдай", "NEXT", 2.8);
-        FreightCar fr3 = new FreightCar("ГАЗель", "NN", 2.7);
-        FreightCar fr4 = new FreightCar("БелАЗ", "7513", 45);
+        FreightCar fr1 = new FreightCar("JAC", "Sunray", 2.7, WeightCapacityType.N1);
+        FreightCar fr2 = new FreightCar("Валдай", "NEXT", 2.8, WeightCapacityType.N2);
+        FreightCar fr3 = new FreightCar("ГАЗель", "NN", 2.7, WeightCapacityType.N3);
+        FreightCar fr4 = new FreightCar("БелАЗ", "7513", 45, WeightCapacityType.N2);
+        fr1.identifyType();
 
-        Bus bus1 = new Bus("Лиаз", "Курсор", 8);
-        Bus bus2 = new Bus("Маз", "Междугородец", 7);
-        Bus bus3 = new Bus("Hyundai", "H350", 3.5);
-        Bus bus4 = new Bus("Лиаз", "Гармошка", 6.8);
-
+        Bus bus1 = new Bus("Лиаз", "Курсор", 8, SeatsCapacityType.VERY_LARGE);
+        Bus bus2 = new Bus("Маз", "Междугородец", 7, SeatsCapacityType.MEDIUM);
+        Bus bus3 = new Bus("Hyundai", "H350", 3.5 , SeatsCapacityType.SMALL);
+        Bus bus4 = new Bus("Лиаз", "Гармошка", 6.8 , SeatsCapacityType.MEDIUM);
+        bus1.identifyType();
 
         bus1.bestLapTime();
 

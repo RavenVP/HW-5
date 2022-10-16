@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public abstract class Car  {
 
+
     private double engineValue;
     private String brand;
     private String model;
@@ -33,10 +34,12 @@ public abstract class Car  {
     public abstract void startMoving();
     public abstract void endMoving();
 
+    public abstract void identifyType();
     public void info() {
         System.out.println("Название || Бренд -> " + brand);
         System.out.println("Модель -> " + model);
         System.out.println("Объём двигателя -> " + engineValue + " литра");
+        System.out.println();
     }
     public double getEngineValue() {return engineValue;}
     public void setEngineValue(double engineValue) {this.engineValue = engineValue;}
