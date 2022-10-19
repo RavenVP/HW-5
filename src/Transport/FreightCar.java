@@ -16,6 +16,13 @@ public class FreightCar extends Car implements Competing{
     }
 
     @Override
+    public void diagnostic() {
+        int a = (int) (1 + Math.random() * 40);
+        if (a > 20) {
+            throw new RuntimeException(" Грузовой атомобиль " + getBrand()+ " " + getModel()+  " не прошёл диагностику");        }
+    }
+
+
     public void identifyType() {
         if (weightCapacityType == null ) {
             System.out.println("Данным по авто недостаточно");

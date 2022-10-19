@@ -15,6 +15,11 @@ public class Bus extends Car implements Competing{
     }
 
     @Override
+    public void diagnostic() {
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " в диагностике не требуется");
+    }
+
+
     public void identifyType() {
         if (seatsCapacityType == null ) {
             System.out.println("Данным по авто недостаточно");

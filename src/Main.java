@@ -1,7 +1,7 @@
 import Transport.*;
-import drivers.DriverB;
-import drivers.DriverC;
-import drivers.DriverD;
+import Transport.drivers.DriverB;
+import Transport.drivers.DriverC;
+import Transport.drivers.DriverD;
 
 
 
@@ -31,6 +31,10 @@ public class Main {
         DriverB ipatov = new DriverB("Ипатов", "Матвей", "Олегович", 'B', 12, pas1);
         DriverC rogozin = new DriverC("Рогозин", "Андрей", "Максимович", 'C', 11, fr1);
         DriverD devetiarov = new DriverD("Деветьяров", "Максим", "Викторович", 'D', 6, bus2);
+
+        pas1.diagnostic();
+        fr1.diagnostic();
+        bus1.diagnostic();
 
         ipatov.info();
         rogozin.info();

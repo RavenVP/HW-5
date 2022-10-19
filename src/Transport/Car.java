@@ -27,12 +27,11 @@ public abstract class Car  {
         } else {
             this.model = model;
         }
-
-
     }
 
     public abstract void startMoving();
     public abstract void endMoving();
+    public abstract void diagnostic();
 
     public abstract void identifyType();
     public void info() {

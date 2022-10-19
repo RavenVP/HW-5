@@ -1,4 +1,4 @@
-package drivers;
+package Transport.drivers;
 
 import Transport.*;
 
@@ -47,7 +47,7 @@ public abstract class Driver<T extends Car & Competing>{
             this.experience = experience;
         }
         if (driverLicense != 'B' && driverLicense != 'C' && driverLicense != 'D') {
-            throw new RuntimeException(" Введите категорию ");
+            throw new RuntimeException(" Необходимо указать тип прав!");
         } else {
             this.driverLicense = driverLicense;
         }
