@@ -26,6 +26,19 @@ public class PassengerCar extends Car implements Competing {
         }
     }
 
+    @Override
+    public void fixCar() {
+        System.out.println();
+        System.out.println("Было проведено техобслуживание " + getBrand()  + " "+ getModel() );
+    }
+
+    @Override
+    public boolean service() {
+        System.out.println();
+        System.out.println("Был проведён сервис " + getBrand()  + " "+ getModel() );
+        return false;
+    }
+
 
     public void identifyType() {
         if (bodyType == null ) {
@@ -50,6 +63,8 @@ public class PassengerCar extends Car implements Competing {
 
     public BodyType getBodyType() {return bodyType;}
     public void setBodyType(BodyType bodyType) {this.bodyType = bodyType;}
+
+
 }
 
 

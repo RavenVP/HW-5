@@ -22,6 +22,19 @@ public class FreightCar extends Car implements Competing{
             throw new RuntimeException(" Грузовой атомобиль " + getBrand()+ " " + getModel()+  " не прошёл диагностику");        }
     }
 
+    @Override
+    public void fixCar() {
+        System.out.println();
+        System.out.println("Было проведено техобслуживание " + getBrand()  + " "+ getModel() );
+    }
+
+    @Override
+    public boolean service() {
+        System.out.println();
+        System.out.println("Был проведён сервис " + getBrand()  + " "+ getModel() );
+        return false;
+    }
+
 
     public void identifyType() {
         if (weightCapacityType == null ) {
