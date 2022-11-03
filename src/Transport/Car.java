@@ -4,7 +4,9 @@ import Transport.drivers.Driver;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Car  {
 
@@ -13,9 +15,9 @@ public abstract class Car  {
     private String brand;
     private String model;
 
-    private final List<Driver<?>> drivers = new ArrayList<>();
-    private final List<Mechanic<?>> mechanics = new ArrayList<>();
-    private final List<Sponsor> sponsors = new ArrayList<>();
+    private final Set<Driver<?>> drivers = new HashSet<>();
+    private final Set<Mechanic<?>> mechanics = new HashSet<>();
+    private final Set<Sponsor> sponsors = new HashSet<>();
 
     public void addDriver(Driver<?> driver) {
         drivers.add(driver);
@@ -63,9 +65,9 @@ public abstract class Car  {
         System.out.println();
     }
 
-    public List<Driver<?>> getDrivers() {return drivers;}
-    public List<Mechanic<?>> getMechanics() {return mechanics;}
-    public List<Sponsor> getSponsors() {return sponsors;}
+    public Set<Driver<?>> getDrivers() {return drivers;}
+    public Set<Mechanic<?>> getMechanics() {return mechanics;}
+    public Set<Sponsor> getSponsors() {return sponsors;}
 
     public double getEngineValue() {return engineValue;}
     public void setEngineValue(double engineValue) {this.engineValue = engineValue;}
@@ -76,15 +78,17 @@ public abstract class Car  {
 
 
     public void allCarInfo() {
-        System.out.println("Имя водителя -> " + drivers.get(0).getName()+ " " + drivers.get(0).getSurname() );
+        for (Driver<?> driver : drivers) {
+            System.out.println("Имя водителя -> " + driver.getName() + " " + driver.getSurname());
+        }
         System.out.println("Спонсоры ->");
-        for (int i = 0; i < sponsors.size(); i++) {
-            System.out.println(sponsors.get(i).getName() + " || " + sponsors.get(i).getDonation() + "$");
+        for (Sponsor sponsor : sponsors) {
+            System.out.println(sponsor.getName() + " || " + sponsor.getDonation() + "$");
         }
         System.out.println("Механики ->");
-        for (int i = 0; i < mechanics.size(); i++) {
-            System.out.println(mechanics.get(i).getName() + " " + mechanics.get(i).getSurname() + " <<" + mechanics.get(i).getCompany()+">>" );
+        for (Mechanic<?> mechanic : mechanics) {
+            System.out.println(mechanic.getName() + " " + mechanic.getSurname() + " <<" + mechanic.getCompany() + ">>");
         }
+    }
 
-        }
 }

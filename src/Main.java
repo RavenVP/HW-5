@@ -53,16 +53,15 @@ public class Main {
         pas1.addSponsor(darkSide);
         pas1.addSponsor(toyoTyres);
         pas1.addSponsor(asus);
-
         pas1.addDriver(ipatov);
-
         pas1.addMechanic(arthur);
-
         pas1.allCarInfo();
+
         pas1.fixCar();
 
         ServiceStation serviceStation = new ServiceStation();
 
+        serviceStation.addCarToService(pas1);
         serviceStation.addCarToService(pas1);
         serviceStation.addCarToService(bus1);
         serviceStation.addCarToService(pas3);
