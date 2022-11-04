@@ -77,18 +77,19 @@ public abstract class Car  {
     public void setModel(String model) {this.model = model;}
 
 
-    public void allCarInfo() {
-        for (Driver<?> driver : drivers) {
+
+     public void allCarInfo() {
+         for (Driver<?> driver : drivers) {
             System.out.println("Имя водителя -> " + driver.getName() + " " + driver.getSurname());
-        }
-        System.out.println("Спонсоры ->");
-        for (Sponsor sponsor : sponsors) {
+         }
+         System.out.println("Спонсоры ->");
+         for (Sponsor sponsor : sponsors) {
             System.out.println(sponsor.getName() + " || " + sponsor.getDonation() + "$");
-        }
-        System.out.println("Механики ->");
-        for (Mechanic<?> mechanic : mechanics) {
-            System.out.println(mechanic.getName() + " " + mechanic.getSurname() + " <<" + mechanic.getCompany() + ">>");
-        }
+         }
+         System.out.println("Механики ->" );
+         for (Mechanic<?> mechanic : mechanics)  {
+            System.out.println(mechanic.getName() + " " + mechanic.getSurname() + " <<" + mechanic.getCompany() + ">>") ;
+         }
     }
 
 }

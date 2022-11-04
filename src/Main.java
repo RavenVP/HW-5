@@ -62,7 +62,6 @@ public class Main {
         ServiceStation serviceStation = new ServiceStation();
 
         serviceStation.addCarToService(pas1);
-        serviceStation.addCarToService(pas1);
         serviceStation.addCarToService(bus1);
         serviceStation.addCarToService(pas3);
         serviceStation.service();
