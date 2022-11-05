@@ -3,11 +3,8 @@ import Transport.drivers.Driver;
 import Transport.drivers.DriverB;
 import Transport.drivers.DriverC;
 import Transport.drivers.DriverD;
-
-import java.util.ArrayDeque;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import tasks.Passport;
+import static tasks.PassportsSet.*;
 
 
 public class Main {
@@ -23,26 +20,14 @@ public class Main {
         FreightCar fr3 = new FreightCar("ГАЗель", "NN", 2.7, WeightCapacityType.N3);
         FreightCar fr4 = new FreightCar("БелАЗ", "7513", 45, WeightCapacityType.N2);
 
-
         Bus bus1 = new Bus("Лиаз", "Курсор", 8, SeatsCapacityType.VERY_LARGE);
         Bus bus2 = new Bus("Маз", "Междугородец", 7, SeatsCapacityType.MEDIUM);
         Bus bus3 = new Bus("Hyundai", "H350", 3.5, SeatsCapacityType.SMALL);
         Bus bus4 = new Bus("Лиаз", "Гармошка", 6.8, SeatsCapacityType.MEDIUM);
 
-
         DriverB ipatov = new DriverB("Ипатов", "Матвей", "Олегович", 'B', 12, pas1);
         DriverC rogozin = new DriverC("Рогозин", "Андрей", "Максимович", 'C', 11, fr1);
         DriverD devetiarov = new DriverD("Деветьяров", "Максим", "Викторович", 'D', 6, bus2);
-
-//        pas1.diagnostic();
-//        fr1.diagnostic();
-//        bus1.diagnostic();
-//
-//        ipatov.info();
-//        rogozin.info();
-//        devetiarov.info();
-//
-//        ipatov.refill();
 
         Sponsor darkSide = new Sponsor("DarkSide", 200000);
         Sponsor toyoTyres = new Sponsor("Toyo Tyres", 300000);
@@ -66,5 +51,24 @@ public class Main {
         serviceStation.addCarToService(pas3);
         serviceStation.service();
 
+        Passport p1 = new Passport(123, "Алексеев", "Егор", "Викторович", "21.11.1980");
+        Passport p2 = new Passport(2123, "Бушуев", "Иван", "Андреевич", "11.05.1999");
+        Passport p3 = new Passport(312, "Овсянкин", "Андрей", "28.10.2000");
+
+        addPassport(p2);
+        addPassport(p3);
+
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p3);
+
+        System.out.println();
+        printAllPassports();
+        System.out.println();
+
+        searchPassport(p2);
+
     }
+
+
 }

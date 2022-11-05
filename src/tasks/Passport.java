@@ -5,34 +5,11 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Passport {
-    public static void main(String[] args) {
-        Passport p1 = new Passport(123, "Алексеев", "Егор", "Викторович", "21.11.1980");
-        Passport p2 = new Passport(2123, "Бушуев", "Иван", "Андреевич", "11.05.1999");
-        Passport p3 = new Passport(312, "Овсянкин", "Андрей", "28.10.2000");
-
-
-        addPassport(p2);
-        addPassport(p3);
-
-        System.out.println(p1);
-        System.out.println(p2);
-        System.out.println(p3);
-
-        System.out.println();
-        printAllPassports();
-        System.out.println();
-
-    }
-
-
-
-
     private int number;
     private String surname;
     private String name;
     private String patronymic;
     private String birthDate;
-    private static Set<Passport> passports = new HashSet<>();
 
     public Passport(int number, String surname, String name, String patronymic, String birthDate) {
         if (number <= 0) {
@@ -53,29 +30,6 @@ public class Passport {
         this(number, surname, name, null, birthDate);
     }
 
-    public static void addPassport(Passport newPassport) {
-        for (Passport passport : passports) {
-            if (passport.getNumber() == newPassport.getNumber()) {
-                throw new IllegalArgumentException("Паспорт с  номером <<"+ newPassport.getNumber()+">> уже есть, обновите данные");
-            }
-        }
-        passports.add(newPassport);
-    }
-
-    public static Passport searchPassport(Passport searched) {
-        for (Passport passport : passports) {
-            if (passport.getNumber() == searched.getNumber()) {
-                return passport;
-            }
-        }
-        return null;
-    }
-
-    public static void printAllPassports() {
-        for (Passport passport : passports) {
-            System.out.println(passport);
-        }
-    }
 
     public int getNumber() {return number;}
     public String getSurname() {return surname;}
@@ -104,11 +58,11 @@ public class Passport {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Passport passport = (Passport) o;
-        return number == passport.number && Objects.equals(surname, passport.surname) && Objects.equals(name, passport.name) && Objects.equals(patronymic, passport.patronymic) && Objects.equals(birthDate, passport.birthDate);
+        return number == passport.number;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, surname, name, patronymic, birthDate);
+        return Objects.hash(number);
     }
 }

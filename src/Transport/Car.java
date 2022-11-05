@@ -3,10 +3,7 @@ package Transport;
 import Transport.drivers.Driver;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class Car  {
 
@@ -92,4 +89,17 @@ public abstract class Car  {
          }
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Double.compare(car.engineValue, engineValue) == 0 && Objects.equals(brand, car.brand) && Objects.equals(model, car.model) && Objects.equals(drivers, car.drivers) && Objects.equals(mechanics, car.mechanics) && Objects.equals(sponsors, car.sponsors);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(engineValue, brand, model, drivers, mechanics, sponsors);
+    }
 }
