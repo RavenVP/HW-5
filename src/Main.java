@@ -1,11 +1,11 @@
 import Transport.*;
-import Transport.drivers.Driver;
 import Transport.drivers.DriverB;
 import Transport.drivers.DriverC;
 import Transport.drivers.DriverD;
 import tasks.Passport;
-import static tasks.PassportsSet.*;
+import tasks.PassportsSet;
 
+import static tasks.PassportsSet.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -33,12 +33,15 @@ public class Main {
         Sponsor toyoTyres = new Sponsor("Toyo Tyres", 300000);
         Sponsor asus = new Sponsor("ASUS", 200000);
 
-        Mechanic arthur = new Mechanic<>("Артур", "Филини", "RR Racing");
+        Mechanic<Car> arthur = new Mechanic<>("Артур", "Филини", "RR Racing");
 
         pas1.addSponsor(darkSide);
         pas1.addSponsor(toyoTyres);
         pas1.addSponsor(asus);
         pas1.addDriver(ipatov);
+        pas1.addDriver(ipatov);
+        pas1.addMechanic(arthur);
+        pas1.addMechanic(arthur);
         pas1.addMechanic(arthur);
         pas1.allCarInfo();
 
@@ -66,9 +69,13 @@ public class Main {
         printAllPassports();
         System.out.println();
 
-        searchPassport(p2);
+        searchPassport(123);
+        searchPassport(321);
+
 
     }
+
+
 
 
 }

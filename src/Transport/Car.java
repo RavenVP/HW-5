@@ -1,6 +1,7 @@
 package Transport;
 
 import Transport.drivers.Driver;
+import tasks.Passport;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -17,12 +18,27 @@ public abstract class Car  {
     private final Set<Sponsor> sponsors = new HashSet<>();
 
     public void addDriver(Driver<?> driver) {
+        for (Driver<?> driver1 : drivers) {
+            if (driver1.equals(driver)) {
+                return;
+            }
+        }
         drivers.add(driver);
     }
     public void addMechanic(Mechanic<?> mechanic) {
+        for (Mechanic<?> mechanic1 : mechanics) {
+            if (mechanic1.equals(mechanic)) {
+                return;
+            }
+        }
         mechanics.add(mechanic);
     }
     public void addSponsor(Sponsor sponsor) {
+        for (Sponsor sponsor1 : sponsors) {
+            if (sponsor1.equals(sponsor)) {
+                return;
+            }
+        }
         sponsors.add(sponsor);
     }
 
@@ -86,6 +102,7 @@ public abstract class Car  {
          System.out.println("Механики ->" );
          for (Mechanic<?> mechanic : mechanics)  {
             System.out.println(mechanic.getName() + " " + mechanic.getSurname() + " <<" + mechanic.getCompany() + ">>") ;
+             System.out.println(mechanics);
          }
     }
 
@@ -95,11 +112,11 @@ public abstract class Car  {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Double.compare(car.engineValue, engineValue) == 0 && Objects.equals(brand, car.brand) && Objects.equals(model, car.model) && Objects.equals(drivers, car.drivers) && Objects.equals(mechanics, car.mechanics) && Objects.equals(sponsors, car.sponsors);
+        return Objects.equals(drivers, car.drivers) && Objects.equals(mechanics, car.mechanics) && Objects.equals(sponsors, car.sponsors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(engineValue, brand, model, drivers, mechanics, sponsors);
+        return Objects.hash(drivers, mechanics, sponsors);
     }
 }

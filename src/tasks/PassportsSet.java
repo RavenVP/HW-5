@@ -9,17 +9,17 @@ public class PassportsSet {
 
     public static void addPassport(Passport newPassport) {
         for (Passport passport : passports) {
-            if (passport.getNumber() == newPassport.getNumber()) {
+            if (passport.equals(newPassport)) {
                 throw new IllegalArgumentException("Паспорт с  номером <<"+ newPassport.getNumber()+">> уже есть, обновите данные");
             }
         }
         passports.add(newPassport);
     }
 
-    public static Passport searchPassport(Passport searched) {
+    public static Passport searchPassport(int passNumber) {
         for (Passport passport : passports) {
-            if (passport.getNumber() == searched.getNumber()) {
-                return searched;
+            if (passport.getNumber() == passNumber) {
+                return passport;
             }
         }
         return null;
