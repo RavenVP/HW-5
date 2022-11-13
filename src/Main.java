@@ -38,9 +38,9 @@ public class Main {
         pas1.addSponsor(darkSide);
         pas1.addSponsor(toyoTyres);
         pas1.addSponsor(asus);
+        pas1.addSponsor(asus);
         pas1.addDriver(ipatov);
         pas1.addDriver(ipatov);
-        pas1.addMechanic(arthur);
         pas1.addMechanic(arthur);
         pas1.addMechanic(arthur);
         pas1.allCarInfo();

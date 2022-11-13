@@ -94,10 +94,12 @@ public abstract class Car  {
      public void allCarInfo() {
          for (Driver<?> driver : drivers) {
             System.out.println("Имя водителя -> " + driver.getName() + " " + driver.getSurname());
+             System.out.println(drivers);
          }
          System.out.println("Спонсоры ->");
          for (Sponsor sponsor : sponsors) {
             System.out.println(sponsor.getName() + " || " + sponsor.getDonation() + "$");
+             System.out.println(sponsors);
          }
          System.out.println("Механики ->" );
          for (Mechanic<?> mechanic : mechanics)  {
@@ -109,8 +111,10 @@ public abstract class Car  {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Car car = (Car) o;
         return Objects.equals(drivers, car.drivers) && Objects.equals(mechanics, car.mechanics) && Objects.equals(sponsors, car.sponsors);
     }
