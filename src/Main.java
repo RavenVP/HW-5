@@ -26,23 +26,26 @@ public class Main {
         Bus bus4 = new Bus("Лиаз", "Гармошка", 6.8, SeatsCapacityType.MEDIUM);
 
         DriverB ipatov = new DriverB("Ипатов", "Матвей", "Олегович", 'B', 12, pas1);
+        DriverB copyD = new DriverB("Ипатов", "Матвей", "Олегович", 'B', 12, pas1);
         DriverC rogozin = new DriverC("Рогозин", "Андрей", "Максимович", 'C', 11, fr1);
         DriverD devetiarov = new DriverD("Деветьяров", "Максим", "Викторович", 'D', 6, bus2);
 
         Sponsor darkSide = new Sponsor("DarkSide", 200000);
+        Sponsor copyS = new Sponsor("DarkSide", 200000);
         Sponsor toyoTyres = new Sponsor("Toyo Tyres", 300000);
         Sponsor asus = new Sponsor("ASUS", 200000);
 
         Mechanic<Car> arthur = new Mechanic<>("Артур", "Филини", "RR Racing");
+        Mechanic<Car> copyM = new Mechanic<>("Артур", "Филини", "RR Racing");
 
         pas1.addSponsor(darkSide);
+        pas1.addSponsor(copyS);
         pas1.addSponsor(toyoTyres);
         pas1.addSponsor(asus);
-        pas1.addSponsor(asus);
         pas1.addDriver(ipatov);
-        pas1.addDriver(ipatov);
+        pas1.addDriver(copyD);
         pas1.addMechanic(arthur);
-        pas1.addMechanic(arthur);
+        pas1.addMechanic(copyM);
         pas1.allCarInfo();
 
         pas1.fixCar();

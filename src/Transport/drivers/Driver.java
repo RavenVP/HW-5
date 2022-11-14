@@ -2,6 +2,8 @@ package Transport.drivers;
 
 import Transport.*;
 
+import java.util.Objects;
+
 
 public abstract class Driver<T extends Car & Competing>{
     private String surname;
@@ -75,5 +77,18 @@ public abstract class Driver<T extends Car & Competing>{
     public double getExperience() {return experience;}
     public void setExperience(double experience) {this.experience = experience;}
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return driverLicense == driver.driverLicense && Double.compare(driver.experience, experience) == 0 && Objects.equals(surname, driver.surname) && Objects.equals(name, driver.name) && Objects.equals(patronymic, driver.patronymic);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(surname, name, patronymic, driverLicense, experience);
+    }
 }
 
